@@ -1,18 +1,25 @@
 from theme_park import ThemePark
-from rides import DarkRide, SpinningRide, BrokenRide
+from rides import DarkRide, SpinningRide, BrokenRide, SpinningEngine, SpinningEngineSuperFast
 from restaurants import SpaceRestaurant, UnderseaRestaurant
 
 
 def main():
-    warwar_land = ThemePark()
+    # Create rides with injected dependencies
+    theme_park_rides = [
+        SpinningRide("Teacups", 7, 360, 3, SpinningEngine()),
+        BrokenRide("Pirates of the Caribbean"),
+        DarkRide("Haunted Mansion", 5, 7),
+    ]
+
+    # Inject rides into ThemePark
+    warwar_land = ThemePark(theme_park_rides)
     warwar_land.ticket_cost = 90
     warwar_land.average_daily_attendance = 50000
     warwar_land.theme_park_name = "War War Land"
 
-    warwar_land.theme_park_rides.append(DarkRide("Haunted Mansion", 5, 7))
-    warwar_land.theme_park_rides.append(SpinningRide("Teacups", 7, 360, 3))
-    warwar_land.theme_park_rides.append(BrokenRide("Pirates of the Caribbean"))
-    # warwar_land.theme_park_rides.append(DarkRide("Pirates of the Caribbean", 5, 4))
+    # Can add more rides with different engine implementations
+    theme_park_rides.append(SpinningRide("Super Spinner", 10, 720, 5, SpinningEngineSuperFast()))
+    theme_park_rides.append(BrokenRide("Old Coaster"))
     warwar_land.print_rides()
 
     warwar_land.restaurants.append(SpaceRestaurant("Pizzasaurus Rex", 5, 3, 1000))

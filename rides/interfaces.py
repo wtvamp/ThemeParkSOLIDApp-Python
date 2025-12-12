@@ -15,9 +15,9 @@ class IExtraDetails(ABC):
 
 class ISpinningEngine(ABC):
     @abstractmethod
-    def start(self) -> bool:
+    def start(self, ride_name: str) -> bool:
         pass
 
     @abstractmethod
-    def stop(self) -> bool:
+    def stop(self, ride_name: str) -> bool:
         pass
