@@ -1,5 +1,5 @@
 from theme_park import ThemePark
-from rides import DarkRide, SpinningRide
+from rides import DarkRide, SpinningRide, BrokenRide
 from restaurants import SpaceRestaurant, UnderseaRestaurant
 
 
@@ -11,7 +11,8 @@ def main():
 
     warwar_land.theme_park_rides.append(DarkRide("Haunted Mansion", 5, 7))
     warwar_land.theme_park_rides.append(SpinningRide("Teacups", 7, 360, 3))
-    warwar_land.theme_park_rides.append(DarkRide("Pirates of the Caribbean", 5, 4))
+    warwar_land.theme_park_rides.append(BrokenRide("Pirates of the Caribbean"))
+    # warwar_land.theme_park_rides.append(DarkRide("Pirates of the Caribbean", 5, 4))
     warwar_land.print_rides()
 
     warwar_land.restaurants.append(SpaceRestaurant("Pizzasaurus Rex", 5, 3, 1000))
