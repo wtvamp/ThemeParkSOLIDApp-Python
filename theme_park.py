@@ -35,11 +35,13 @@ class ThemePark:
     def print_rides(self):
         print(f"{self.theme_park_name} contains the following rides:\n")
         for ride in self.theme_park_rides:
+            print(ride.extra_details())
             print(ride.ride_details())
 
     def print_restaurants(self):
         print(f"{self.theme_park_name} contains the following restaurants:\n")
         for restaurant in self.restaurants:
+            print(restaurant.extra_details())
             print(restaurant.restaurant_details())
 
     def print_profit(self):

@@ -1,6 +1,6 @@
 from theme_park import ThemePark
-from rides import ThemeParkRide
-from restaurants import Restaurant
+from rides import DarkRide, SpinningRide
+from restaurants import SpaceRestaurant, UnderseaRestaurant
 
 
 def main():
@@ -9,14 +9,14 @@ def main():
     warwar_land.average_daily_attendance = 50000
     warwar_land.theme_park_name = "War War Land"
 
-    warwar_land.theme_park_rides.append(ThemeParkRide("Haunted Mansion", 5))
-    warwar_land.theme_park_rides.append(ThemeParkRide("Teacups", 7))
-    warwar_land.theme_park_rides.append(ThemeParkRide("Pirates of the Caribbean", 5))
+    warwar_land.theme_park_rides.append(DarkRide("Haunted Mansion", 5, 7))
+    warwar_land.theme_park_rides.append(SpinningRide("Teacups", 7, 360, 3))
+    warwar_land.theme_park_rides.append(DarkRide("Pirates of the Caribbean", 5, 4))
     warwar_land.print_rides()
 
-    warwar_land.restaurants.append(Restaurant("Pizzasaurus Rex", 5, 3))
-    warwar_land.restaurants.append(Restaurant("Planet Mars Burgers", 8, 7.5))
-    warwar_land.restaurants.append(Restaurant("Salads Undersea", 3, 6))
+    warwar_land.restaurants.append(SpaceRestaurant("Pizzasaurus Rex", 5, 3, 1000))
+    warwar_land.restaurants.append(SpaceRestaurant("Planet Mars Burgers", 8, 7.5, 1000))
+    warwar_land.restaurants.append(UnderseaRestaurant("Salads Undersea", 3, 6, 1000))
     warwar_land.print_restaurants()
 
     warwar_land.print_profit()

@@ -1,4 +1,7 @@
-class Restaurant:
+from abc import ABC, abstractmethod
+
+
+class Restaurant(ABC):
     total_income = 0.0
     total_loss = 0.0
 
@@ -11,3 +14,7 @@ class Restaurant:
 
     def restaurant_details(self) -> str:
         return f"{self.name} which generates {self.income} in income and costs {self.loss}\n"
+
+    @abstractmethod
+    def extra_details(self) -> str:
+        pass
