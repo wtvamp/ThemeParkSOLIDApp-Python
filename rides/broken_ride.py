@@ -1,7 +1,8 @@
 from .theme_park_ride import ThemeParkRide
+from .interfaces import IExtraDetails
 
 
-class BrokenRide(ThemeParkRide):
+class BrokenRide(ThemeParkRide, IExtraDetails):
     def __init__(self, name: str):
         super().__init__(name, 0)  # Speed is 0 for broken rides
 

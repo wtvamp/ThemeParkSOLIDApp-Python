@@ -1,5 +1,5 @@
 from typing import List
-from rides import ThemeParkRide
+from rides import ThemeParkRide, IExtraDetails, ISpinningEngine
 from restaurants import Restaurant
 
 
@@ -35,7 +35,11 @@ class ThemePark:
     def print_rides(self):
         print(f"{self.theme_park_name} contains the following rides:\n")
         for ride in self.theme_park_rides:
-            print(ride.extra_details())
+            if isinstance(ride, IExtraDetails):
+                print(ride.extra_details())
+            if isinstance(ride, ISpinningEngine):
+                ride.start()
+                ride.stop()
             print(ride.ride_details())
 
     def print_restaurants(self):

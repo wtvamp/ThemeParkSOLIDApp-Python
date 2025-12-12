@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
+from .interfaces import IThemeParkRide
 
 
-class ThemeParkRide(ABC):
+class ThemeParkRide(IThemeParkRide):
     total_speed = 0.0
 
     def __init__(self, name: str, speed: float):
@@ -11,7 +11,3 @@ class ThemeParkRide(ABC):
 
     def ride_details(self) -> str:
         return f"{self.name} goes {self.speed}mph.\n"
-
-    @abstractmethod
-    def extra_details(self) -> str:
-        pass

@@ -1,0 +1,23 @@
+from abc import ABC, abstractmethod
+
+
+class IThemeParkRide(ABC):
+    @abstractmethod
+    def ride_details(self) -> str:
+        pass
+
+
+class IExtraDetails(ABC):
+    @abstractmethod
+    def extra_details(self) -> str:
+        pass
+
+
+class ISpinningEngine(ABC):
+    @abstractmethod
+    def start(self) -> bool:
+        pass
+
+    @abstractmethod
+    def stop(self) -> bool:
+        pass

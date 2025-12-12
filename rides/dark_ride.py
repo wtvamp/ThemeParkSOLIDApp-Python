@@ -1,7 +1,8 @@
 from .theme_park_ride import ThemeParkRide
+from .interfaces import IExtraDetails
 
 
-class DarkRide(ThemeParkRide):
+class DarkRide(ThemeParkRide, IExtraDetails):
     def __init__(self, name: str, speed: float, scariness: int):
         super().__init__(name, speed)
         self._scariness = scariness  # Rated from 0-10
